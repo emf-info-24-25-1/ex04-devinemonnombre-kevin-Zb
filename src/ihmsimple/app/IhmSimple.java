@@ -1,5 +1,7 @@
 package ihmsimple.app;
 
+import ihmsimple.ctrl.Controller;
+
 public class IhmSimple {
     
     /**
@@ -10,7 +12,8 @@ public class IhmSimple {
      * @param args arguments de la ligne de commande
      */
     public static void main(String[] args) {
-        // VOTRE CODE ICI...
+        Controller Controller = new Controller();
+        
     }
 
 }
