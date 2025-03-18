@@ -2,6 +2,8 @@ package ihmsimple.ctrl;
 
 import static ihmsimple.services.ServiceDevine.NOMBRE_INVALIDE;
 
+import java.awt.Color;
+
 import ihmsimple.services.ServiceDevine;
 import ihmsimple.views.View;
 
@@ -62,7 +64,8 @@ public class Controller {
      * Voir le diagramme de séquence pour l'implémentation de cette méthode.
      */
     public void start() {
-        // VOTRE CODE ICI...
+        refView.ihmStart();
+        refView.afficherStatus("jeu terminé !", Color.LIGHT_GRAY);
     }
 
     /**
