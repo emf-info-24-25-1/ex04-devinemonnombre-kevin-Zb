@@ -48,7 +48,8 @@ public class Controller {
      * Voir le diagramme de séquence pour l'implémentation de cette méthode.
      */
     public void actionDemarrerNouveauJeu() {
-        // VOTRE CODE ICI...
+        nombre = refServiceDevine.penserAUnNombre();
+        refView.afficherStatus("Devinez !", Color.YELLOW);
     }
 
     /**
@@ -56,7 +57,11 @@ public class Controller {
      * Voir le diagramme de séquence pour l'implémentation de cette méthode.
      */
     public void actionDeviner() {
-        // VOTRE CODE ICI...
+        int valeurProposee
+        if (nombre != NOMBRE_INVALIDE) {
+            
+
+        }
     }
 
     /**
