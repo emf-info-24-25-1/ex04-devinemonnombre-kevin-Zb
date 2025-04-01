@@ -51,17 +51,32 @@ public class Controller {
         nombre = refServiceDevine.penserAUnNombre();
         refView.afficherStatus("Devinez !", Color.YELLOW);
     }
-
+    
+    
     /**
      * Méthode permettant de deviner le nombre pensé par l'utilisateur.
      * Voir le diagramme de séquence pour l'implémentation de cette méthode.
      */
     public void actionDeviner() {
-        int valeurProposee
+        int valeurProposee;
         if (nombre != NOMBRE_INVALIDE) {
-            
-
+            valeurProposee = refView.lireValeurProposee();
+            if (valeurProposee != NOMBRE_INVALIDE) {
+                if (valeurProposee <= -1 || valeurProposee > 100) {
+                    refView.afficherStatus("envoie l'uranium", Color.PINK);
+                }
+                else if (valeurProposee < nombre) {
+                    refView.afficherStatus("trop piti",Color.RED);
+                }
+                else if (valeurProposee > nombre) {
+                    refView.afficherStatus("trop grand", Color.RED);
+                }
+                else if (valeurProposee == nombre) {
+                    refView.afficherStatus("GGwp tu a trouvé bg", Color.GREEN);
+                }
+            }
         }
+    
     }
 
     /**
@@ -79,7 +94,7 @@ public class Controller {
      * @param refView la nouvelle référence à la vue de l'application
      */
     public void setRefView(View refView) {
-        // VOTRE CODE ICI...
+        this.refView = refView;
     }
 
     /**
@@ -89,7 +104,7 @@ public class Controller {
      *                         l'application
      */
     public void setRefServiceDevine(ServiceDevine refServiceDevine) {
-        // VOTRE CODE ICI...
+        this.refServiceDevine = refServiceDevine;
     }
 
     /**
@@ -98,7 +113,7 @@ public class Controller {
      * @return la référence à la vue de l'application
      */
     public View getRefView() {
-        // VOTRE CODE ICI...
+        return refView;
     }
 
     /**
@@ -107,7 +122,7 @@ public class Controller {
      * @return la référence au serviceDevine de l'application
      */
     public ServiceDevine getRefServiceDevine() {
-        // VOTRE CODE ICI...
+        return refServiceDevine;
     }
 
 }
